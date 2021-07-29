@@ -1,3 +1,5 @@
+#![windows_subsystem = "windows"]
+
 use chrono::{Datelike, NaiveDate, NaiveTime, Weekday};
 use notify_rust::Notification;
 use serde::Deserialize;
