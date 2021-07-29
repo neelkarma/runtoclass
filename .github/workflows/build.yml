@@ -1,0 +1,45 @@
+name: build
+on: [push, workflow_dispatch]
+jobs:
+  build-windows:
+    name: build-windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+      - name: Build
+        run: cargo build --release
+      - name: Publish Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: runtoclass-windows.exe
+          path: target/release/runtoclass.exe
+  build-linux:
+    name: build-linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+      - name: Build
+        run: cargo build --release
+      - name: Publish Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: runtoclass-linux
+          path: target/release/runtoclass
+  build-darwin:
+    name: build-darwin
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Rust
+        uses: actions-rs/toolchain@v1
+      - name: Build
+        run: cargo build --release
+      - name: Publish Binary
+        uses: actions/upload-artifact@v2
+        with:
+          name: runtoclass-darwin
+          path: target/release/runtoclass
