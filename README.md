@@ -2,6 +2,8 @@
 
 A simple app for SBHS students that notifies you of the bell times.
 
+**IMPORTANT: Right now RunToClass is broken. Please don't use it. It'll be fixed soon&trade;.**
+
 ## Usage
 
 1. Grab a build from the [GitHub Actions](https://github.com/neelkarma/runtoclass/actions) tab.
